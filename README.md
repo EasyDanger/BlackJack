@@ -13,6 +13,8 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 -Multiple decks in the Deck.<br>
 -Database support to track record.
 
+### Version History
+
 ##### [0.1.0] - 11/24/2018
 -Added all Player and Card classes.<br>
 -Added initial play logic for Player.<br>
@@ -23,7 +25,7 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 -Logic sometimes does strange things when player scores BlackJack/21<br>
 -No help, introduction, explanation of rules.<br>
 
-
+### Contact
 <div align="right">-Ed Carter</div> 
 <a href="https://twitter.com/EasyDanger"><div align="right">@EasyDanger</div></a>
 <a href="https://linkedin.com/in/CarterCommaEd"><div align="right">in/CarterCommaEd </div></a>
