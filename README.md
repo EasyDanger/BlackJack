@@ -8,7 +8,7 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 
 ### Planned Features
 - Ability to play beyond simply hitting oneself until busting.<br>
--- Implement "Stay" button, "Split" button. No currency is presently planned, so no "Double-down" button.<br>
+  - Implement "Stay" button, "Split" button. No currency is presently planned, so no "Double-down" button.<br>
 - Logic for Dealer<br>
 - Multiple decks in the Deck.<br>
 - Database support to track record.
