@@ -1,0 +1,306 @@
+/* Global Layout Set-up */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: #a5a5a5;
+	background: #222;
+}
+/* Link Styles */
+a {
+	text-decoration: none;
+	color: #d20000;
+}
+
+a:hover {
+	color: #6633ff;
+}
+
+/* Section Styles */
+.main-nav {
+	width: 100%;
+	hieght: 100%;
+	background: black;
+	min-height: 30px;
+	position: fixed;
+	text-align: center;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-around;
+	font-weight: 700;
+	list-style-type: none;
+	margin: 0 auto;
+}
+
+.nav .name {
+	display: none;
+	color: white;
+}
+
+.nav li {
+	padding: 5px 10px 10px 10px;
+}
+
+.nav a {
+	transition: all .5s;
+}
+
+.nav a:hover {
+	color: white
+}
+
+.input {
+	text-align: right;
+}
+
+.butt {
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	outline: none;
+}
+
+.botton {
+	border: none;
+	color: white;
+	padding: 15px 15px;
+	text-align: center;
+	text-decoration: none;
+	background: #d20000;
+	border-bottom: 4px solid #6c0000;
+	border-radius: 18px;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.botton:hover {
+	border-color: #470000;
+}
+
+.botton1 {
+	border: none;
+	color: white;
+	padding: 15px 15px;
+	text-align: center;
+	text-decoration: none;
+	background: #009200;
+	border-bottom: 4px solid #006c00;
+	border-radius: 18px;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.botton1:hover {
+	border-color: #004700;
+}
+
+.botton2 {
+	border: none;
+	color: white;
+	padding: 15px 15px;
+	text-align: center;
+	text-decoration: none;
+	background: #1392f0;
+	border-bottom: 4px solid #064ca3;
+	border-radius: 18px;
+	display: inline-block;
+	font-size: 16px;
+}
+
+.botton2:hover {
+	border-color: #0b64c6;
+}
+
+header {
+	text-align: center;
+	background: url('pictures/mountain profile.jpg') no-repeat top center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+header {
+	line-height: 1.5;
+}
+
+thead {
+		line-height: 1.5;
+	
+	padding: 15px 15px;
+	justify-content: space-around;
+}
+
+.input {
+	transition: all .5s;
+	text-align: center;
+}
+
+.input:hover {
+	transform: scale(1.1);
+}
+
+.tag {
+	background-color: #d20000;
+	color: white;
+	padding: 10px;
+	border-radius: 5px;
+	display: table;
+	margin: 10px auto;
+}
+
+.quote {
+	color: #222;
+	font-weight: normal;
+	font-family: "Freestyle Script";
+	font-size: 1.5em;
+	background-color: #a5a5a5
+}
+
+.titles {
+	background-color: #222;
+	color: #a5a5a5;
+}
+
+.card {
+	padding: 20px 40px 40px;
+	min-width: 50px;
+	max-width: 550px;
+	text-align: justify;
+	background: #d20000;
+	border-bottom: 4px solid #6c0000;
+	border-radius: 6px;
+	color: white;
+}
+
+.card:hover {
+	border-color: #470000;
+}
+
+.card1 {
+	padding: 20px 40px 40px;
+	min-width: 500px;
+	text-align: justify;
+	background: #1392f0;
+	border-bottom: 4px solid #064ca3;
+	border-radius: 6px;
+	color: white;
+}
+
+.card1:hover {
+	border-color: #0b64c6;
+}
+
+.card2 {
+	padding: 20px 40px 40px;
+	min-width: 500px;
+	max-width: 550px;
+	text-align: justify;
+	background: #009200;
+	border-bottom: 4px solid #006c00;
+	border-radius: 6px;
+	color: white;
+}
+
+.card2:hover {
+	border-color: #004700;
+}
+
+ul.skills {
+	padding: 0;
+	text-align: center;
+}
+
+.skills li {
+	border-radius: 6px;
+	display: inline-block;
+	background: #222;
+	color: white;
+	padding: 5px 10px;
+	margin: 2px;
+}
+
+.skills li:nth-child(odd) {
+	background: #a5a5a5;
+}
+
+#grey {
+	color: grey;
+}
+
+#grey:hover {
+	color: white;
+}
+
+footer {
+	width: 100%;
+	min-height: 30px;
+	padding: 20px 0 40px 20px;
+}
+
+footer .copyright {
+	top: -8px;
+	margin-right: 20px;
+	font-size: .75em;
+}
+
+footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer ul li {
+	display: inline-block;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.button {
+	align: right;
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 720px) {
+	.flex {
+		display: flex;
+		max-width: 1200px;
+		justify-content: space-around;
+		margin: 0 auto;
+	}
+	.flux {
+		display: flex;
+		justify-content: space-around;
+	}
+	header {
+		min-height: 450px;
+	}
+	.nav {
+		max-width: 1200px;
+	}
+	.nav .name {
+		display: block;
+		margin-right: auto;
+		color: white;
+	}
+	main {
+		padding-top: 50px;
+	}
+	main p {
+		line-height: 1.6em;
+	}
+	footer {
+		font-size: 1.3em;
+		max-width: 1200px;
+		margin: 40px auto;
+	}
+}
