@@ -13,15 +13,15 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 -Multiple decks in the Deck.<br>
 -Database support to track record.
 
-##### [0.1.0] - 11/24/2018<br>
+##### [0.1.0] - 11/24/2018
 -Added all Player and Card classes.<br>
 -Added initial play logic for Player.<br>
 -Added logic for scoring player cards.<br>
 -Added initial JSPs.
 ##### Known Issues
--Full deck visible for testing.
--Logic sometimes does strange things when player scores BlackJack/21
--No help, introduction, explanation of rules.
+-Full deck visible for testing.<br>
+-Logic sometimes does strange things when player scores BlackJack/21<br>
+-No help, introduction, explanation of rules.<br>
 
 
 <div align="right">-Ed Carter</div> 
