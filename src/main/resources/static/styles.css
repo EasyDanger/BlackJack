@@ -200,10 +200,10 @@ thead {
 
 .card2 {
 	padding: 20px 40px 40px;
-	min-width: 500px;
+	min-width: 300px;
 	max-width: 550px;
 	text-align: justify;
-	background: #009200;
+	background: #006200;
 	border-bottom: 4px solid #006c00;
 	border-radius: 6px;
 	color: white;

@@ -25,7 +25,7 @@
 	</c:choose>
 
 	<main class="flex">
-	<div class="card">
+	<div class="card2">
 		<table class="table">
 			<thead>
 				<tr>
@@ -69,7 +69,7 @@
 
 	</div>
 
-	<div class="card">
+	<div class="card2">
 		<table class="table">
 			<thead>
 				<tr>
@@ -118,7 +118,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="card">
+	<div class="card2">
 		<table class="table">
 			<thead>
 				<tr>
