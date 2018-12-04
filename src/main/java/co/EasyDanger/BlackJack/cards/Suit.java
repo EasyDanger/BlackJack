@@ -1,4 +1,4 @@
-package co.EasyDanger.BlackJack;
+package co.EasyDanger.BlackJack.cards;
 
 public enum Suit {
 

@@ -1,4 +1,4 @@
-package co.EasyDanger.BlackJack;
+package co.EasyDanger.BlackJack.cards;
 
 public class Card {
 
@@ -27,7 +27,7 @@ public class Card {
 			this.value = 10;
 		} else {
 			this.name = "" + ((num + 1) % 13);
-			this.value = num % 13;
+			this.value = (num+1) % 13;
 		}
 		if (num > 38) {
 			this.suit = Suit.HEART;
@@ -85,4 +85,6 @@ public class Card {
 	public String toString() {
 		return "Card[" + name + " of " + suit + ']';
 	}
+
 }
+
