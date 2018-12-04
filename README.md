@@ -30,10 +30,9 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 -Added logic for scoring player cards.<br>
 -Added initial JSPs.
 ##### Known Issues
--Full deck visible for testing.
--Logic sometimes does strange things when player scores BlackJack/21
--No help, introduction, explanation of rules.
-
+-Full deck visible for testing.<br>
+-Logic sometimes does strange things when player scores BlackJack/21<br>
+-No help, introduction, explanation of rules.<br>
 
 <div align="right">-Ed Carter</div> 
 <a href="https://twitter.com/EasyDanger"><div align="right">@EasyDanger</div></a>
