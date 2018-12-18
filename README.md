@@ -1,19 +1,26 @@
 # BlackJack
-A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web Development in general. This WebApp uses the <a href="https://deckofcardsapi.com">Deck of Cards API</a> only for pictures of the cards. All logic is currently written on the back-end, in Java. If you have suggestions, feel free to share them with me via the contact info below. Thanks for checking out this repository!
+A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web Development in general. This WebApp uses the <a href="https://deckofcardsapi.com">Deck of Cards API</a> only for pictures of the cards. All logic is currently written on the back-end in Java. If you have suggestions, feel free to share them with me via the contact info below. Thanks for checking out this repository!
 
 ### Features
+- Allows player to choose between 1 and 8 decks.
 - Creates, shuffles, and deals a hand of BlackJack.<br>
 - Play against the dealer in unlimited games of BlackJack.<br>
 - Displays messages for wins, losses, blackjacks, and pushes.<br>
 - Debug mode for testing/verification.
 
 ### Planned Features
-- "Split" button. 
-  - No currency is presently planned, so no "Double-down" button.<br>
-- Multiple decks in the Deck.<br>
+- "Split" button. <br>
+- In-game currency and "Double-down" button.<br>
 - Database support to track records.
 
-##### [1.0.0] = 12/3/2018
+##### [1.1.0] - 12/17/2018
+- Added multiple deck support
+- Added index for options menu
+##### Known Issues
+- No "help" page.<br>
+- Doesn't scale well to smaller screens<br>
+
+##### [1.0.0] - 12/3/2018
 - Added dealer logic. <br>
 - Added messages for game outcomes.<br>
 - Added logic game outcome.

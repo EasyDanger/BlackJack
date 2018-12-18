@@ -14,7 +14,7 @@ public class Dealer extends Player {
 
 	public void play(HttpSession session, RedirectAttributes redir) {
 		Deck deck = (Deck) session.getAttribute("Deck");
-		while (this.getValue() < 18) {
+		while (this.getValue() < 17) {
 			this.setHand(deck.drawCard());
 		}
 	}

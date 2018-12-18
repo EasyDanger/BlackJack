@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -20,9 +21,9 @@ public class BlackJackController {
 	}
 
 	@RequestMapping("/deal")
-	public ModelAndView deal(HttpSession session, RedirectAttributes redir) {
+	public ModelAndView deal(@RequestParam("HowManyDecks") Integer howMany, HttpSession session, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView("deal");
-		Deck deck = new Deck();
+		Deck deck = new Deck(howMany);
 		Player player = new Player();
 		Dealer dealer = new Dealer();
 		Boolean dealerBJ = false;
@@ -30,7 +31,9 @@ public class BlackJackController {
 		Boolean debug = false;
 		Boolean playerBJ = false;
 		Boolean push = false;
+		
 		deck.shuffle();
+				
 		player.setHand(deck.drawCard());
 		dealer.setHand(deck.drawCard());
 		player.setHand(deck.drawCard());

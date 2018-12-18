@@ -29,11 +29,11 @@ public class Card {
 			this.name = "" + ((num + 1) % 13);
 			this.value = (num+1) % 13;
 		}
-		if (num > 38) {
+		if (num % 52  > 38) {
 			this.suit = Suit.HEART;
-		} else if (num > 25) {
+		} else if (num % 52 > 25) {
 			this.suit = Suit.CLUB;
-		} else if (num > 12) {
+		} else if (num % 52 > 12) {
 			this.suit = Suit.DIAMOND;
 		} else {
 			this.suit = Suit.SPADE;

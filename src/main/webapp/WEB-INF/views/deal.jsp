@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <link
 	rel="stylesheet"
-	href="http://localhost:8080/styles.css"
+	href="/styles.css"
 >
 <title>Deal</title>
 </head>
@@ -32,7 +32,7 @@
 		<c:when test="${ PlayerBJ && not DealerBJ }">
 			<h2>You got BlackJack! You win!</h2>
 		</c:when>
-		<c:when test="${ PlayerWon && Dealer.value < 21 }">
+		<c:when test="${ PlayerWon && Dealer.value > 21 }">
 			<h2>Dealer Busted out! You Win!</h2>
 		</c:when>
 		<c:when test="${ Push }">
