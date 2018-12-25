@@ -1,42 +1,31 @@
 package co.EasyDanger.BlackJack.players;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import co.EasyDanger.BlackJack.cards.Card;
-import co.EasyDanger.BlackJack.cards.SortByValue;
 
 public class Player {
+	
+	List<Hand> hands = new LinkedList<Hand>();
+	Integer numOfHands = 1;
 
-	private List<Card> hand = new LinkedList<Card>();
-	private Integer value = 0;
-
-	public List<Card> getHand() {
-		return hand;
+	public Hand getHands() {
+		return hands.get(numOfHands-1);
 	}
 
-	public Integer getValue() {
-		value = 0;
-		List<Card> temp = new ArrayList<Card>(hand);
-		Collections.sort(temp, new SortByValue());
-		for (Card card : temp) {
-			if (card.getName().equals("Ace") && (value > 10)) {
-				value += 1;
-			} else {
-				value += card.getValue();
-			}
-		}
-		return value;
+	public void setHands(Hand hand) {
+		this.hands.add(hand);
+	}
+	public void splitHand(Hand hand) {
+		Card card = hand.getHand().get(1);
+		hand.getHand().remove(1);
+		Hand splitHand = new Hand(card);
+		this.hands.add(splitHand);
+		numOfHands += 1;
 	}
 
-	public void setValue(Integer value) {
-		this.value = value;
+	public Integer getNumOfHands() {
+		return numOfHands;
 	}
-
-	public void setHand(Card card) {
-		this.hand.add(card);
-	}
-
 }

@@ -6,7 +6,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.EasyDanger.BlackJack.cards.Deck;
 
-public class Dealer extends Player {
+public class Dealer extends Hand {
 
 	public Dealer() {
 		super();

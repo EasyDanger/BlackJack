@@ -51,7 +51,7 @@
 
 	<main class="flex">
 	<div class="card2">
-	<h2>Player's Hand</h2>
+		<h2>Player's Hand</h2>
 		<c:choose>
 			<c:when test="${ Debug }">
 				<h3>Player's Hand Value: ${ Player.value }</h3>
@@ -83,13 +83,21 @@
 			</tbody>
 		</table>
 		<c:choose>
-			<c:when test="${ not Busted && not DealerWon && not Stay && not DealerBJ }">
+			<c:when
+				test="${ not Busted && not DealerWon && not Stay && not DealerBJ }"
+			>
 				<a href="/deal/hit">
 					<button class="botton1">Hit</button>
 				</a>
 				<a href="/deal/stay">
 					<button class="botton1">Stay</button>
 				</a>
+				<c:if
+					test="${ Player.hand[0].name eq Player.hand[1].name }">
+					<a href="/deal/split">
+					<button class="botton1">Split</button>
+				</a>
+				</c:if>
 			</c:when>
 			<c:otherwise>
 				<a href="/new">
@@ -102,7 +110,7 @@
 	</div>
 
 	<div class="card2">
-	<h2>Dealer's Hand</h2>
+		<h2>Dealer's Hand</h2>
 		<c:choose>
 			<c:when test="${ Debug }">
 				<h3>Dealer's hand Value: ${ Dealer.value }</h3>

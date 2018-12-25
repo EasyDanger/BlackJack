@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.EasyDanger.BlackJack.cards.Deck;
 import co.EasyDanger.BlackJack.players.Dealer;
+import co.EasyDanger.BlackJack.players.Hand;
 import co.EasyDanger.BlackJack.players.Player;
 
 @Controller
@@ -33,26 +34,30 @@ public class BlackJackController {
 		Boolean push = false;
 		
 		deck.shuffle();
-				
-		player.setHand(deck.drawCard());
+		
+		Hand hand = new Hand();
+		hand.setHand(deck.drawCard());
+	//	player.setHand(deck.drawCard());
 		dealer.setHand(deck.drawCard());
-		player.setHand(deck.drawCard());
+		hand.setHand(deck.drawCard());
+	//	player.setHand(deck.drawCard());
 		dealer.setHand(deck.drawCard());
+		player.setHands(hand);
 
 		if (dealer.getValue() == 21) {
 			dealerBJ = true;
 		}
-		if (player.getValue() == 21) {
+		if (player.getHands().getValue() == 21) {
 			playerBJ = true;
 		}
-		if (player.getValue() == dealer.getValue()) {
+		if (player.getHands().getValue() == dealer.getValue()) {
 			push = true;
 		}
 		
 		session.setAttribute("Push", push);
 		session.setAttribute("PlayerBJ", playerBJ);
 		session.setAttribute("Debug", debug);
-		session.setAttribute("Player", player);
+		session.setAttribute("Player", player.getHands());
 		session.setAttribute("Dealer", dealer);
 		session.setAttribute("Deck", deck);
 		session.setAttribute("DealerBJ", dealerBJ);
@@ -69,14 +74,15 @@ public class BlackJackController {
 		Deck deck = (Deck) session.getAttribute("Deck");
 		Boolean busted = (Boolean) session.getAttribute("Busted");
 		
-		player.setHand(deck.drawCard());
+		player.getHands().setHand(deck.drawCard());
+	//	player.setHand(deck.drawCard());
 		
-		if (player.getValue() > 21) {
+		if (player.getHands().getValue() > 21) {
 			busted = true;
 			session.setAttribute("Busted", busted);
 		}
 		
-		session.setAttribute("Player", player);
+		session.setAttribute("Player", player.getHands());
 		session.setAttribute("Deck", deck);
 		
 		return mv;
@@ -102,13 +108,13 @@ public class BlackJackController {
 			
 		if (dealer.getValue() > 21) {
 			playerWon = true;
-		} else if (dealer.getValue() > player.getValue()) {
+		} else if (dealer.getValue() > player.getHands().getValue()) {
 			playerWon = false;
 			playerLost = true;
-		} else if ((player.getValue() > dealer.getValue()) && (player.getValue() < 22)) {
+		} else if ((player.getHands().getValue() > dealer.getValue()) && (player.getHands().getValue() < 22)) {
 			playerWon = true;
 		}
-		if (player.getValue() == dealer.getValue()) {
+		if (player.getHands().getValue() == dealer.getValue()) {
 			push = true;
 		}
 		
@@ -116,10 +122,15 @@ public class BlackJackController {
 		session.setAttribute("Push", push);
 		session.setAttribute("PlayerLost", playerLost);
 		session.setAttribute("Dealer", dealer);
-		session.setAttribute("Player", player);
+		session.setAttribute("Player", player.getHands());
 		session.setAttribute("PlayerWon", playerWon);
 		
 		return mv;
+	}
+	
+	@RequestMapping("/split")
+	public ModelAndView split(HttpSession session, RedirectAttributes redir) {
+		return new ModelAndView("deal");
 	}
 
 	@RequestMapping("/debug")

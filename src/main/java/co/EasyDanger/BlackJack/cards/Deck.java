@@ -7,13 +7,14 @@ import java.util.List;
 public class Deck {
 
 	List<Card> cards = new ArrayList<Card>();
-	int numberOff = 1;
+	int numberOf = 1;
 
-	public Deck(int howMany) {
-		for (int i = 0; i < (howMany * 52); i++) {
+	public Deck(int numberOf) {
+		for (int i = 0; i < (numberOf * 52); i++) {
 			Card d = new Card(i);
 			cards.add(i, d);
 		}
+		this.numberOf = numberOf;
 	}
 
 	public List<Card> getCards() {
