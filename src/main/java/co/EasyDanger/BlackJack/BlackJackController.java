@@ -1,5 +1,8 @@
 package co.EasyDanger.BlackJack;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -25,7 +28,7 @@ public class BlackJackController {
 	public ModelAndView deal(@RequestParam("HowManyDecks") Integer howMany, HttpSession session, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView("deal");
 		Deck deck = new Deck(howMany);
-		Player player = new Player();
+		//Player player = new Player();
 		Dealer dealer = new Dealer();
 		Boolean dealerBJ = false;
 		Boolean busted = false;
@@ -42,22 +45,25 @@ public class BlackJackController {
 		hand.setHand(deck.drawCard());
 	//	player.setHand(deck.drawCard());
 		dealer.setHand(deck.drawCard());
-		player.setHands(hand);
+	//	player.setHands(hand);
 
+		List<Hand> player = new LinkedList<Hand>();
+		player.add(hand);
+		
 		if (dealer.getValue() == 21) {
 			dealerBJ = true;
 		}
-		if (player.getHands().getValue() == 21) {
+		if (hand.getValue() == 21) {
 			playerBJ = true;
 		}
-		if (player.getHands().getValue() == dealer.getValue()) {
+		if (hand.getValue() == dealer.getValue()) {
 			push = true;
 		}
 		
 		session.setAttribute("Push", push);
 		session.setAttribute("PlayerBJ", playerBJ);
 		session.setAttribute("Debug", debug);
-		session.setAttribute("Player", player.getHands());
+		session.setAttribute("Player", player);
 		session.setAttribute("Dealer", dealer);
 		session.setAttribute("Deck", deck);
 		session.setAttribute("DealerBJ", dealerBJ);

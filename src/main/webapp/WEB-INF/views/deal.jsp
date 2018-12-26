@@ -54,7 +54,7 @@
 		<h2>Player's Hand</h2>
 		<c:choose>
 			<c:when test="${ Debug }">
-				<h3>Player's Hand Value: ${ Player.value }</h3>
+				<h3>Player's Hand Value: ${ Player.hands.value }</h3>
 			</c:when>
 		</c:choose>
 
@@ -68,7 +68,7 @@
 			<tbody>
 				<c:forEach
 					var="item"
-					items="${ Player.hand }"
+					items="${ Player[0].hand }"
 				>
 					<tr>
 						<td>${item.name}</td>
@@ -93,7 +93,7 @@
 					<button class="botton1">Stay</button>
 				</a>
 				<c:if
-					test="${ Player.hand[0].name eq Player.hand[1].name }">
+					test="${ Player[0].hand[0].name eq Player[0].hand[0].name }">
 					<a href="/deal/split">
 					<button class="botton1">Split</button>
 				</a>
