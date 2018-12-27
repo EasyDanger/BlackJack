@@ -1,31 +1,46 @@
 package co.EasyDanger.BlackJack.players;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import co.EasyDanger.BlackJack.cards.Card;
 
-public class Player {
-	
-	List<Hand> hands = new LinkedList<Hand>();
-	Integer numOfHands = 1;
+public class Player extends LinkedList<Hand> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	Integer numOfHands = 0;
 
 	public Hand getHands() {
-		return hands.get(numOfHands-1);
+		if (this.isEmpty()) {
+			this.add(new Hand());
+		}
+		return this.getThisHand();
 	}
 
 	public void setHands(Hand hand) {
-		this.hands.add(hand);
+		this.add(hand);
 	}
+
 	public void splitHand(Hand hand) {
-		Card card = hand.getHand().get(1);
-		hand.getHand().remove(1);
+		Card card = hand.getCards().get(1);
+		hand.getCards().remove(1);
 		Hand splitHand = new Hand(card);
-		this.hands.add(splitHand);
+		this.add(splitHand);
 		numOfHands += 1;
 	}
 
 	public Integer getNumOfHands() {
-		return numOfHands;
+		return numOfHands + 1;
 	}
+	public void nextHand() {
+		this.numOfHands -= 1;
+	}
+	
+	public Hand getThisHand() {
+		return this.get(numOfHands);
+	}
+
 }

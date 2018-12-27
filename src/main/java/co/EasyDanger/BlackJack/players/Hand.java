@@ -8,23 +8,26 @@ import java.util.List;
 import co.EasyDanger.BlackJack.cards.Card;
 import co.EasyDanger.BlackJack.cards.SortByValue;
 
-public class Hand {
+public class Hand extends LinkedList<Card>{
 
-	private List<Card> hand = new LinkedList<Card>();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer value = 0;
 	
 	public Hand() {}
 	public Hand(Card card) {
-		this.hand.add(card);
+		this.add(card);
 	}
 
-	public List<Card> getHand() {
-		return hand;
+	public List<Card> getCards() {
+		return this;
 	}
 
 	public Integer getValue() {
 		value = 0;
-		List<Card> temp = new ArrayList<Card>(hand);
+		List<Card> temp = new ArrayList<Card>(this);
 		Collections.sort(temp, new SortByValue());
 		for (Card card : temp) {
 			if (card.getName().equals("Ace") && (value > 10)) {
@@ -40,7 +43,7 @@ public class Hand {
 		this.value = value;
 	}
 
-	public void setHand(Card card) {
-		this.hand.add(card);
+	public void setCards(Card card) {
+		this.add(card);
 	}
 }

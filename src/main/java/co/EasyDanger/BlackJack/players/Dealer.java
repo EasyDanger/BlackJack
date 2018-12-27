@@ -8,6 +8,11 @@ import co.EasyDanger.BlackJack.cards.Deck;
 
 public class Dealer extends Hand {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public Dealer() {
 		super();
 	}
@@ -15,7 +20,7 @@ public class Dealer extends Hand {
 	public void play(HttpSession session, RedirectAttributes redir) {
 		Deck deck = (Deck) session.getAttribute("Deck");
 		while (this.getValue() < 17) {
-			this.setHand(deck.drawCard());
+			this.setCards(deck.drawCard());
 		}
 	}
 }

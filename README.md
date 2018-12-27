@@ -3,22 +3,22 @@ A simple BlackJack game to practice programming logic, Spring MVC, Java, and Web
 
 ### Features
 - Allows player to choose between 1 and 8 decks.
-- Creates, shuffles, and deals a hand of BlackJack.<br>
-- Play against the dealer in unlimited games of BlackJack.<br>
-- Displays messages for wins, losses, blackjacks, and pushes.<br>
+- Creates, shuffles, and deals a hand of BlackJack.
+- Play against the dealer in unlimited games of BlackJack.
+- Displays messages for wins, losses, blackjacks, and pushes.
 - Debug mode for testing/verification.
 
 ### Planned Features
-- "Split" button. <br>
-- In-game currency and "Double-down" button.<br>
+- "Split" button.
+- In-game currency and "Double-down" button.
 - Database support to track records.
 
 ##### [1.1.0] - 12/17/2018
 - Added multiple deck support
 - Added index for options menu
 ##### Known Issues
-- No "help" page.<br>
-- Doesn't scale well to smaller screens<br>
+- No "help" page
+- Doesn't scale well to smaller screens
 
 ##### [1.0.0] - 12/3/2018
 - Added dealer logic. <br>
