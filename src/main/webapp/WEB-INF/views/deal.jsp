@@ -88,11 +88,6 @@
 				</tbody>
 			</table>
 
-
-
-
-
-
 			<c:choose>
 				<c:when
 					test="${ not Busted && not DealerWon && not Stay && not DealerBJ && not PlayerBJ}"
