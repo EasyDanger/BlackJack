@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import co.EasyDanger.BlackJack.cards.Card;
+import co.EasyDanger.BlackJack.cards.Ending;
 import co.EasyDanger.BlackJack.cards.SortByValue;
 
 public class Hand extends LinkedList<Card>{
@@ -14,7 +15,8 @@ public class Hand extends LinkedList<Card>{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer value = 0;
+	private Integer value;
+	private Ending end;
 	
 	public Hand() {}
 	public Hand(Card card) {
@@ -39,11 +41,13 @@ public class Hand extends LinkedList<Card>{
 		return value;
 	}
 
-	public void setValue(Integer value) {
-		this.value = value;
-	}
-
 	public void setCards(Card card) {
 		this.add(card);
+	}
+	public Ending getEnd() {
+		return end;
+	}
+	public void setEnd(Ending end) {
+		this.end = end;
 	}
 }
